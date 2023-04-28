@@ -1,0 +1,81 @@
+
+<div class="sm:flex  gap-5  py-5 main">
+
+
+<div class="left ">
+ 
+
+
+    <div class="max-w-xs" *ngIf="userData">
+        <div class="bg-white shadow-xl rounded-lg py-3">
+            <div class="photo-wrapper p-2">
+                <img class="w-32 h-32 rounded-full mx-auto border p-5" [src]="userData.image" alt="Image">
+            </div>
+            <div class="p-2">
+                <h3 class="text-center text-xl text-gray-900 font-medium leading-8">{{userData.name}}</h3>
+                <div class="text-center text-gray-400 text-xs font-semibold">
+                    <p>Web Developer</p>
+                </div>
+                <table class="text-xs my-3">
+                    <tr>
+                        <td class="px-2 py-2 text-gray-500 font-semibold">Email</td>
+                        <td class="px-2 py-2">{{userData.email}}</td>
+                    </tr>
+                    <tr>
+                        <td class="px-2 py-2 text-gray-500 font-semibold">Phone</td>
+                        <td class="px-2 py-2">+977 9955221114</td>
+                    </tr>
+                    <tr>
+                        <td class="px-2 py-2 text-gray-500 font-semibold">Connections </td>
+                        <td class="px-2 py-2">{{userData.connection.length}}</td>
+                    </tr>
+                </table>
+    
+                <div class="text-center my-3">
+                    <a class="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" routerLink="./profile">View Profile</a>
+                </div>
+    
+            </div>
+        </div>
+
+    
+    </div>
+</div>
+<div class="w-full right ">
+
+
+   <div class="flex justify-between bg-white  h-20 p-1 rounded  ">
+      <div class=" flex">
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+          </svg>
+          <p class="mt-4">Create new Post</p>
+      </div>
+      <div class="flex">
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="w-10  m-1 h-15">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="w-10  m-1 h-15">
+            <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+          </svg>
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="w-10  m-1 h-15">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+          </svg>
+          
+      </div>
+     
+   </div>
+<div class="  flex  flex-col">
+   <ng-container *ngFor="let item of userData?.connection">
+
+      <app-postshow [user]="item"></app-postshow>
+   </ng-container>
+
+   
+  
+  
+</div>
+    </div>
+</div>

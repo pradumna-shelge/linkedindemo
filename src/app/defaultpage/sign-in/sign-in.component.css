@@ -1,0 +1,17 @@
+
+
+  .bor {
+    
+    background: linear-gradient(to right, #fff 20%, #fff 40%, #196ce1 50%, #fff 100%);
+    background-size: 200% auto;
+    
+    animation: shine 3s linear infinite;
+  }
+  
+  /*Begin shimmer code*/
+  
+  @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
+    }

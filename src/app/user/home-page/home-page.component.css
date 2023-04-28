@@ -1,0 +1,13 @@
+.main{
+    overflow: hidden;
+    background-color: floralwhite;
+}
+.right{
+    height: 700px;
+    padding-right: 10px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.left{
+width: 40%;
+}
